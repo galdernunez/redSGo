@@ -1,6 +1,6 @@
 git add .
 git commit -m "Ultimo Commit"
 git push
-go build main.go
+go build -o main
 rm main.zip
 tar -a -cf main.zip main
