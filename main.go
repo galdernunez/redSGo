@@ -1,4 +1,4 @@
-package redsgo
+package main
 
 import (
 	"context"
