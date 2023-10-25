@@ -50,7 +50,8 @@ func Handlers(ctx context.Context, request events.APIGatewayProxyRequest) models
 		}
 	case "DELETE":
 		switch ctx.Value(models.Key("path")).(string) {
-
+		case "elimnartweet":
+			return routers.EliminoTweet(request, claim)
 		}
 	}
 	r.Message = "Method invalid"

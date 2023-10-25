@@ -21,7 +21,7 @@ func LeoTweets(request events.APIGatewayProxyRequest) models.RespAPI {
 	}
 
 	if len(pagina) < 1 {
-		pagina = 1
+		pagina = "1"
 	}
 	pag, err := strconv.Atoi(pagina)
 	if err != nil {
