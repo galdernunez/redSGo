@@ -45,6 +45,10 @@ func Handlers(ctx context.Context, request events.APIGatewayProxyRequest) models
 			return routers.VerPerfil(request)
 		case "leerTweets":
 			return routers.LeoTweets(request)
+		case "obtenerAvatar":
+			return routers.ObtenerImagen(ctx, "A", request, claim)
+		case "obtenerBanner":
+			return routers.ObtenerImagen(ctx, "B", request, claim)
 
 		}
 	case "PUT":
