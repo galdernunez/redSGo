@@ -2,6 +2,7 @@ package jwt
 
 import (
 	"errors"
+	"redSGo/bd"
 	"redSGo/models"
 	"strings"
 
@@ -26,7 +27,12 @@ func ProcessToken(tk string, JWTSign string) (*models.Claim, bool, string, error
 		return miClave, nil
 	})
 	if err == nil {
-
+		_, encontrado, _ := bd.ChekExistUser(claims.Email)
+		if encontrado {
+			Email = claims.Email
+			IDUser = claims.ID.Hex()
+		}
+		return &claims, encontrado, IDUser, nil
 	}
 
 	if !tkn.Valid {
