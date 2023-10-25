@@ -5,6 +5,7 @@ go 1.12
 require (
 	github.com/aws/aws-lambda-go v1.41.0 // indirect
 	github.com/aws/aws-sdk-go v1.46.3 // indirect
+	github.com/aws/aws-sdk-go-v2 v1.21.2 // indirect
 	github.com/aws/aws-sdk-go-v2/config v1.18.23 // indirect
 	github.com/aws/aws-sdk-go-v2/service/s3 v1.40.2 // indirect
 	github.com/aws/aws-sdk-go-v2/service/secretsmanager v1.19.7 // indirect
