@@ -34,7 +34,7 @@ func ModificarPerfil(u models.User, ID string) (bool, error) {
 		registro["ubicacion"] = u.Ubicacion
 	}
 	if len(u.SitioWeb) > 0 {
-		registro["sitioWeb"] = u.SitioWeb
+		registro["sitioweb"] = u.SitioWeb
 	}
 
 	updtString := bson.M{
