@@ -4,11 +4,6 @@ import (
 	"context"
 	"os"
 	"redSGo/awsgo"
-	"redSGo/bd"
-	"redSGo/handlers"
-	"redSGo/models"
-	"redSGo/secretmanager"
-	"strings"
 
 	"github.com/aws/aws-lambda-go/events"
 	lambda "github.com/aws/aws-lambda-go/lambda"
@@ -21,7 +16,16 @@ func main() {
 func executeLambda(ctx context.Context, request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResponse, error) {
 	var res *events.APIGatewayProxyResponse
 	awsgo.InitAWS()
-	if !ValidParameters() {
+	res = &events.APIGatewayProxyResponse{
+		StatusCode: 418,
+		Body:       "SOY UNA TETERA",
+		Headers: map[string]string{
+			"Content-Type": "application/json",
+		},
+	}
+	return res, nil
+
+	/*if !ValidParameters() {
 		res = &events.APIGatewayProxyResponse{
 			StatusCode: 400,
 			Body:       "Error in environment variables. It must include 'SecretName', 'BucketName', 'UrlPrefix'",
@@ -82,6 +86,7 @@ func executeLambda(ctx context.Context, request events.APIGatewayProxyRequest) (
 
 	}
 	return respAPI.CustomResp, nil
+	*/
 }
 
 func ValidParameters() bool {
