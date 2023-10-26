@@ -35,7 +35,7 @@ func ObtenerImagen(ctx context.Context, tipo string, request events.APIGatewayPr
 	var filename string
 	switch tipo {
 	case "A":
-		filename = "avatars/" + perfil.Avatar
+		filename = perfil.Avatar
 	case "B":
 		filename = "banners/" + perfil.Banner
 	}

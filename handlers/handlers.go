@@ -37,6 +37,8 @@ func Handlers(ctx context.Context, request events.APIGatewayProxyRequest) models
 			return routers.UploadImage(ctx, "A", request, claim)
 		case "subirBanner":
 			return routers.UploadImage(ctx, "B", request, claim)
+		case "altarelacion":
+			return routers.AltaRelacion(ctx, request, claim)
 		}
 
 	case "GET":
