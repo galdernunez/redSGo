@@ -51,6 +51,10 @@ func Handlers(ctx context.Context, request events.APIGatewayProxyRequest) models
 			return routers.ObtenerImagen(ctx, "A", request, claim)
 		case "obtenerBanner":
 			return routers.ObtenerImagen(ctx, "B", request, claim)
+		case "consultarelacion":
+			return routers.ObtenerRelaciones(request, claim)
+		case "listarusuarios":
+			return routers.ListaUsuarios(request, claim)
 
 		}
 	case "PUT":
@@ -62,6 +66,8 @@ func Handlers(ctx context.Context, request events.APIGatewayProxyRequest) models
 		switch ctx.Value(models.Key("path")).(string) {
 		case "elimnartweet":
 			return routers.EliminoTweet(request, claim)
+		case "elimnarrelacion":
+			return routers.EliminoRelacion(request, claim)
 		}
 	}
 	r.Message = "Method invalid"
