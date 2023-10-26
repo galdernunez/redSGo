@@ -55,6 +55,8 @@ func Handlers(ctx context.Context, request events.APIGatewayProxyRequest) models
 			return routers.ObtenerRelaciones(request, claim)
 		case "listarusuarios":
 			return routers.ListaUsuarios(request, claim)
+		case "leotweetsseguidores":
+			return routers.LeoTweetsSeguidores(request, claim)
 
 		}
 	case "PUT":
